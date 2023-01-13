@@ -1,0 +1,9 @@
+<mvc:View
+   xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+   xmlns="sap.m">
+   <Page id="page" title="S3">
+      <content>
+         <Button text="ClickMe3" press="handleClickMe"></Button>
+      </content>
+   </Page>
+</mvc:View>

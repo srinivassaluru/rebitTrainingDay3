@@ -1,0 +1,10 @@
+<mvc:View
+  controllerName="com.ui5.srinivas.testrouting.controller.S2"
+   xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+   xmlns="sap.m">
+   <Page id="page" title="S2" showNavButton="true" navButtonPress="handleMain">
+      <content>
+         <Button text="ClickMe2" press="handleClickMe2"></Button>
+      </content>
+   </Page>
+</mvc:View>

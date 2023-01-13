@@ -1,0 +1,70 @@
+<mvc:View controllerName="com.rebit.hr.leaveapplication.controller.S2"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:l="sap.ui.layout"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+
+    <Page title="{i18n>secondPageTitle}" titleAlignment="Center" showNavButton="true" navButtonPress="handleNaigationBack">
+
+       <content>
+
+
+         <f:SimpleForm id="SimpleFormChange354"
+         editable="true"
+         layout="ResponsiveGridLayout"
+         labelSpanXL="3"
+         labelSpanL="3"
+         labelSpanM="3"
+         labelSpanS="12"
+         adjustLabelSpan="false"
+         emptySpanXL="4"
+         emptySpanL="4"
+         emptySpanM="4"
+         emptySpanS="0"
+         columnsXL="1"
+         columnsL="1"
+         columnsM="1"
+         singleContainerFullSize="false" >
+         <f:content>
+            <Label text="Employee Name" />
+            <Input id="empName" showValueHelp="true" valueHelpRequest="handleEmpIdValueHelp" suggestionItemSelected="handleSuggestionItemSelected" showSuggestion="true" suggestionItems="{localModel>/employees}">
+               <suggestionItems>
+                  <core:Item text="{localModel>empName}" key="{localModel>empId}"/>
+               </suggestionItems>
+            </Input>
+            
+            <Label text="Employee Id" />
+            <Input id="empId"/>
+          
+            <Label text="Leave Type" />
+            <Select items="{localModel>/leaveTypesSet}" forceSelection="false" id="leaveType">
+               <items>
+                  <core:Item text="{localModel>leaveTypeName}"/>
+               </items>
+            </Select>
+
+            <Label text="Select Leave Date" />
+            <DateRangeSelection/>
+          
+
+            <Label text="Comments" />
+            <TextArea id="comments"/>
+          
+
+         </f:content>
+      </f:SimpleForm>
+
+       </content>
+       <footer>
+         <Bar>
+             <contentRight>
+                    <Button text="Submit" icon="sap-icon://save" type="Emphasized" press="handleSubmit"/>
+                    <Button text="Cancel" icon="sap-icon://decline" type="Reject" press="handleCancel"/>
+             </contentRight>
+         </Bar>
+     </footer>
+
+    </Page>
+
+</mvc:View>

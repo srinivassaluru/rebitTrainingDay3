@@ -1,0 +1,11 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+<Dialog>
+   <content>
+<List items="{localModel>/leavesData}"> <!-- Root Context of the Leaves -->
+   <items>
+       <ObjectListItem title="{localModel>empName}"></ObjectListItem> <!-- Property Binding -->
+   </items>
+ </List>
+</content>
+</Dialog>
+</core:FragmentDefinition>

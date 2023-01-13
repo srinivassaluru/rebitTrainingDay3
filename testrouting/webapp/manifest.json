@@ -1,0 +1,143 @@
+{
+  "_version": "1.48.0",
+  "sap.app": {
+    "id": "com.ui5.srinivas.testrouting",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.8.4",
+      "toolsId": "6593a907-192b-441e-859b-48cec3bf420d"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/sap/opu/odata/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.109.3",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.f": {},
+        "sap.suite.ui.generic.template": {},
+        "sap.ui.comp": {},
+        "sap.ui.generic.app": {},
+        "sap.ui.table": {},
+        "sap.ushell": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "com.ui5.srinivas.testrouting.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {}
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "com.ui5.srinivas.testrouting.view",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "clearControlAggregation": true
+      },
+      "routes": [
+        {
+          "name": "screen1",
+          "pattern": "",
+          "target": [
+            "screen1Target"
+          ]
+        },
+        {
+          "name": "screen2",
+          "pattern": "navigation",
+          "target": [
+            "screen2Target"
+          ]
+        },
+        {
+          "name": "screen3",
+          "pattern": "screen3",
+          "target": [
+            "screen3Target"
+          ]
+        }
+      ],
+      "targets": {
+        "screen1Target": {
+          "clearControlAggregation": true,
+          "viewId": "S1",
+          "viewName": "S1"
+        },
+        "screen2Target": {
+          "clearControlAggregation": true,
+          "viewId": "S2",
+          "viewName": "S2"
+        },
+        "screen3Target": {
+          "clearControlAggregation": true,
+          "viewId": "S3",
+          "viewName": "S3"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "com.ui5.srinivas.testrouting.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "comui5.srinivas.testrouting.loadmyscreens.App"
+    }
+  }
+}

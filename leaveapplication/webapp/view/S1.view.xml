@@ -1,0 +1,26 @@
+<mvc:View controllerName="com.rebit.hr.leaveapplication.controller.S1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+              <List items="{localModel>/leavesData}" mode="Delete" delete="handleDelete"> <!-- Root Context of the Leaves -->
+                <items>
+                    <ObjectListItem title="{localModel>empName}" number="{localModel>empId}">
+                        <attributes>
+                                <ObjectAttribute text="{localModel>leaveType}"/>
+                        </attributes>
+                    </ObjectListItem> <!-- Property Binding -->
+                </items>
+              </List>
+        </content>
+        <footer>
+            <Bar>
+                <contentRight>
+                       <Button text="Add" icon="sap-icon://add" type="Emphasized" press="handleAdd"/>
+                </contentRight>
+            </Bar>
+        </footer>
+        <headerContent>
+        </headerContent>
+    </Page>
+</mvc:View>
