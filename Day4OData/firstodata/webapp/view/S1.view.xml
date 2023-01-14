@@ -1,0 +1,14 @@
+<mvc:View controllerName="com.rebit.ui5.firstodata.controller.S1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+
+            <List items="{odataModel>/Products}">
+                <items>
+                    <ObjectListItem title="{odataModel>ProductName}" number="{odataModel>ProductID}"></ObjectListItem>
+                </items>
+            </List>
+        </content>
+    </Page>
+</mvc:View>
