@@ -1,9 +1,9 @@
-<c:FragmentDefinition
+<core:FragmentDefinition
 	xmlns="sap.m"
-	xmlns:c="sap.ui.core"
+	xmlns:core="sap.ui.core"
 >
 
-<List items="{jsonModelData>/leavesData}">
+<List items="{jsonModelData>/leavesData}" mode="SingleSelectMaster" selectionChange="handleSelectionChange" id="listId">
    <items>
        <ObjectListItem  title="{path:'jsonModelData>empName', formatter:'.lifeSaver.displayNameInUpper'}" number="{jsonModelData>empId}">
 
@@ -17,4 +17,4 @@
        </ObjectListItem>
    </items>
 </List>
-</c:FragmentDefinition>
+</core:FragmentDefinition>

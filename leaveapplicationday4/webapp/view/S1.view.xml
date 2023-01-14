@@ -5,5 +5,13 @@
         <content >
                <core:Fragment  fragmentName="com.rebit.ui5.leaveapplicationday4.view.ListDisplay" type="XML" ></core:Fragment>
         </content>
+        <footer>
+                <Bar>
+                    <contentRight>
+
+                        <Button text="Delete" icon="sap-icon://delete" press="handleDelete" type="Reject" enabled="false"  id="deleteBtn"/>
+                    </contentRight>
+                </Bar>
+        </footer>
     </Page>
 </mvc:View>
