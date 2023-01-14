@@ -1,0 +1,20 @@
+<c:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core"
+>
+
+<List items="{jsonModelData>/leavesData}">
+   <items>
+       <ObjectListItem  title="{path:'jsonModelData>empName', formatter:'.lifeSaver.displayNameInUpper'}" number="{jsonModelData>empId}">
+
+           <attributes>
+               <ObjectAttribute text="{jsonModelData>empId}"></ObjectAttribute>
+           </attributes>
+           <firstStatus>
+               <!-- <ObjectStatus text="{path:'jsonModelData>leaveType', formatter:'.lifeSaver.displayNameInUpper'}" state="{parts:[{path:'jsonModelData>leaveType'},{path:'jsonModelData>empName'}], formatter:'.lifeSaver.changeStateDynamically'}"></ObjectStatus> -->
+               <ObjectStatus text="{path:'jsonModelData>leaveType', formatter:'.lifeSaver.displayNameInUpper'}" state="{= ${jsonModelData>leaveType} === 'SickLeave' ? 'Error' : 'Success' }"></ObjectStatus>
+           </firstStatus>
+       </ObjectListItem>
+   </items>
+</List>
+</c:FragmentDefinition>
