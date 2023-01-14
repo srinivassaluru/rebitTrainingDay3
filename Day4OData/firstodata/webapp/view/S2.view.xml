@@ -1,0 +1,15 @@
+<mvc:View
+   controllerName="com.rebit.ui5.firstodata.controller.S2"
+   xmlns:mvc="sap.ui.core.mvc"
+   xmlns="sap.m"
+   xmlns:c="sap.ui.core"
+   displayBlock="true"
+   height="100%"
+   busyIndicatorDelay="0"
+>
+   <Page  title="{i18n>secondTitle}">
+      <content>
+            <ObjectHeader title="{odataModel>ProductName}"></ObjectHeader>
+      </content>
+   </Page>
+</mvc:View>

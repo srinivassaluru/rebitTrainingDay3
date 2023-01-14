@@ -3,10 +3,17 @@
     xmlns="sap.m">
     <Page id="page" title="{i18n>title}">
         <content>
-
-            <List items="{odataModel>/Products}">
+            <SearchField placeholder="Enter Product name to search" search="handleProductSearch" liveChange="handleProductLiveSearch"></SearchField>
+            <List items="{odataModel>/Products}" id="listObj" growing="true" growingThreshold="10" mode="SingleSelectMaster" selectionChange="handleListSelection">
                 <items>
-                    <ObjectListItem title="{odataModel>ProductName}" number="{odataModel>ProductID}"></ObjectListItem>
+                    <ObjectListItem title="{odataModel>ProductName}" number="{odataModel>ProductID}">
+                        <attributes>
+                            <ObjectAttribute text="{odataModel>QuantityPerUnit}"></ObjectAttribute>
+                        </attributes>
+                        <firstStatus>
+                            <ObjectStatus text="{odataModel>UnitPrice}"></ObjectStatus>
+                        </firstStatus>
+                    </ObjectListItem>
                 </items>
             </List>
         </content>
