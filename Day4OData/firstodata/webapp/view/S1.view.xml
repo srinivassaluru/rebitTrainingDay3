@@ -1,10 +1,13 @@
 <mvc:View controllerName="com.rebit.ui5.firstodata.controller.S1"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
-    xmlns="sap.m">
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
     <Page id="page" title="{i18n>title}">
         <content>
             <SearchField placeholder="Enter Product name to search" search="handleProductSearch" liveChange="handleProductLiveSearch"></SearchField>
-            <List items="{odataModel>/Products}" id="listObj" growing="true" growingThreshold="10" mode="SingleSelectMaster" selectionChange="handleListSelection">
+           
+           
+            <List items="{odataModel>/Products}" id="listObj" growing="true" growingThreshold="10" selectionChange="handleListSelection">
                 <items>
                     <ObjectListItem title="{odataModel>ProductName}" number="{odataModel>ProductID}">
                         <attributes>
@@ -16,6 +19,24 @@
                     </ObjectListItem>
                 </items>
             </List>
+
         </content>
+        
+        <footer>
+            <Bar>
+                <contentRight>
+                    <Button text="MultiSelect" press="handleMultSelect"></Button>
+
+                    <Select forceSelection="false" id="listModes" change="handleListModelSelectionChange">
+                        <items>
+                            <core:Item text="MultiSelect"></core:Item>
+                            <core:Item text="SingleSelect"></core:Item>
+                            <core:Item text="SingleSelectMaster"></core:Item>
+                            <core:Item text="None"></core:Item>
+                        </items>
+                    </Select>
+                </contentRight>
+            </Bar>
+        </footer>
     </Page>
 </mvc:View>

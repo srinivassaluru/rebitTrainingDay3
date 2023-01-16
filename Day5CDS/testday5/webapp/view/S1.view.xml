@@ -1,0 +1,9 @@
+<mvc:View controllerName="com.rebit.ui5.testday5.controller.S1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <Button press="handleSAP" text="Open Samdahan"/>
+        </content>
+    </Page>
+</mvc:View>

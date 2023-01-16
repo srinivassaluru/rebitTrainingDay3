@@ -1,0 +1,22 @@
+<mvc:View controllerName="com.rebit.ui5.s4hanatrainingodata.controller.S1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content >
+
+            <List items="{/ES_PRODUCTS}">
+                <items>
+                    <ObjectListItem title="{Name}"></ObjectListItem>
+                </items>
+            </List>
+          
+        </content>
+        <footer>
+            <Bar>
+                <contentRight>
+                    <Button text="Add" icon="sap-icon://add" press="handleAdd" type="Emphasized"/>
+                </contentRight>
+            </Bar>
+        </footer>
+    </Page>
+</mvc:View>

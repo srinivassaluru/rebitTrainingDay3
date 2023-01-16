@@ -1,0 +1,36 @@
+<mvc:View controllerName="com.rebit.ui5.crudapp.controller.S1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content >
+
+            <List items="{jsonModel>/petData}">
+                <items>
+                    <ObjectListItem title="{jsonModel>name}/"></ObjectListItem>
+                </items>
+            </List>
+            <SearchField  placeholder="Enter Product Id to Search" search="handleBackEndSearch"></SearchField>
+            <List items="{/ES_PRODUCTS}" id="listObj">
+                <items>
+                    <ObjectListItem number="{Price}" title="{Name}" numberUnit="{CurrencyCode}">
+                        <attributes>
+                          <ObjectAttribute text="{Width} X  {Depth} X {Height}"></ObjectAttribute>
+                          <ObjectAttribute text="{ProductId}"></ObjectAttribute>
+                          
+                        </attributes>
+                        
+                    </ObjectListItem>
+                </items>
+            </List>
+        </content>
+        <footer>
+            <Bar>
+                <contentRight>
+                    <Button type="Emphasized" icon="sap-icon://add" press="handleAdd"></Button>
+                    <Button type="Emphasized" icon="sap-icon://edit" press="handleUpdate"></Button>
+                    <Button type="Emphasized" icon="sap-icon://delete" press="handleDelete"></Button>
+                </contentRight>
+            </Bar>
+        </footer>
+    </Page>
+</mvc:View>
